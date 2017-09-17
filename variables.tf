@@ -60,6 +60,9 @@ variable "public_subnet_tags" {
 
 variable "private_subnet_tags" {
   description = "Additional tags for the public subnets"
-  default     = {}
+  default     = {
+    "prod-private-primary": "prod-private-primary-1a"
+    "prod-private-secondary": "prod-private-secondary-1b"
+    }
 }
 
