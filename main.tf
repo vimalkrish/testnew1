@@ -43,7 +43,6 @@ resource "aws_route_table" "private" {
   count = "${length(var.azs)}"
 
   vpc_id           = "${aws_vpc.mod.id}"
-  propagating_vgws = ["${var.private_propagating_vgws}"]
 
   tags = "${merge(var.tags, map("Name", format("%s-rt-private-%s", var.name, element(var.azs, count.index))))}"
 }
